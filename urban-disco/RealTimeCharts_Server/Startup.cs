@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RealTimeCharts_Server.HubConfig;
 
 namespace RealTimeCharts_Server
 {
@@ -25,6 +26,7 @@ namespace RealTimeCharts_Server
                 .AllowCredentials());
             });
 
+            services.AddSignalR();
             services.AddControllers();
         }
 
@@ -52,6 +54,7 @@ namespace RealTimeCharts_Server
                 //});
 
                 endpoints.MapControllers();
+                endpoints.MapHub<ChartHub>("./chart");
             });
         }
     }
