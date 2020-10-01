@@ -19,6 +19,8 @@ Grab the article at [https://code-maze.com/netcore-signalr-angular/](https://cod
 
 This likely means that the library (ng2-charts) which declares ChartsModule has not been processed correctly by ngcc, or is not compatible with Angular Ivy. Check if a newer version of the library is available, and update if so. Also consider checking with the library's authors to see if the library is expected to be compatible with Ivy."; a Google Search provided this [https://github.com/valor-software/ng2-charts/issues/1239](https://github.com/valor-software/ng2-charts/issues/1239);
 
+The tutorial is complete but the chart is not displaying due to the version differences between the project Angular version (7) and my newer Angular version (10) ("It is due to some of the dependencies of ng2-charts (including Chart.js) using non ES imports. It will be hopefully addressed when Chart.js is updated to 3.0.0, worst case scenario now is that your bundle size is slightly bigger."; this is still a problem as of a most recent update 8 days ago, my comment here is from late-August).
+
 ## Notes
 
 * The lack of use of 'AllowAnyOrigin' (in favour of 'WithOrigins') on the Server app when enabling CORS (Cross-origin resource sharing) is because in .NET Core 3.0 the combination of AllowAnyOrigin and AllowCredentials is considered an insecure CORS configuration; a detailed guide has been provided at [https://code-maze.com/enabling-cors-in-asp-net-core/](https://code-maze.com/enabling-cors-in-asp-net-core/);
