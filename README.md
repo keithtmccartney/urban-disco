@@ -9,11 +9,11 @@ Grab the article at [https://code-maze.com/netcore-signalr-angular/](https://cod
 
 ## Errors / Problems
 
-* ~~On mapping the the SignalR Hub on the back-end configuration, a conflict was experienced between accessing the custom Chart route area and the Chart Controller; on researching the problem I noticed this [https://stackoverflow.com/a/47924014/7857102](https://stackoverflow.com/a/47924014/7857102): "The problem was that I have configured the hub at route /chat while my ChatController was also responsible for it. After mapping the hub to different route than the controller's one everything went fine.
+* ~On mapping the the SignalR Hub on the back-end configuration, a conflict was experienced between accessing the custom Chart route area and the Chart Controller; on researching the problem I noticed this [https://stackoverflow.com/a/47924014/7857102](https://stackoverflow.com/a/47924014/7857102): "The problem was that I have configured the hub at route /chat while my ChatController was also responsible for it. After mapping the hub to different route than the controller's one everything went fine.
 
 I changed this: app.UseSignalR(routes => { routes.MapHub<ChatHub>("chat"); });
 
-To this: app.UseSignalR(routes => { routes.MapHub<ChatHub>("chatter"); });"; some re-configuring may be needed for the desired route-mapping but my SignalR connectivity is now functioning between the front-end and back-end;~~ This is no longer an problem;
+To this: app.UseSignalR(routes => { routes.MapHub<ChatHub>("chatter"); });"; some re-configuring may be needed for the desired route-mapping but my SignalR connectivity is now functioning between the front-end and back-end;~ This is no longer an problem;
 
 ## Notes
 
