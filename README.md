@@ -15,6 +15,10 @@ Grab the article at [https://code-maze.com/netcore-signalr-angular/](https://cod
 
 ~To this: app.UseSignalR(routes => { routes.MapHub<ChatHub>("chatter"); });"; some re-configuring may be needed for the desired route-mapping but my SignalR connectivity is now functioning between the front-end and back-end;~ This is no longer an problem;
 
+* On working with various 'ng2-charts' and 'charts.js' library versions the following error occurred: "ERROR in node_modules/ng2-charts/charts/charts.d.ts:53:22 - error NG6002: Appears in the NgModule.imports of AppModule, but could not be resolved to an NgModule class.
+
+This likely means that the library (ng2-charts) which declares ChartsModule has not been processed correctly by ngcc, or is not compatible with Angular Ivy. Check if a newer version of the library is available, and update if so. Also consider checking with the library's authors to see if the library is expected to be compatible with Ivy."; a Google Search provided this [https://github.com/valor-software/ng2-charts/issues/1239](https://github.com/valor-software/ng2-charts/issues/1239);
+
 ## Notes
 
 * The lack of use of 'AllowAnyOrigin' (in favour of 'WithOrigins') on the Server app when enabling CORS (Cross-origin resource sharing) is because in .NET Core 3.0 the combination of AllowAnyOrigin and AllowCredentials is considered an insecure CORS configuration; a detailed guide has been provided at [https://code-maze.com/enabling-cors-in-asp-net-core/](https://code-maze.com/enabling-cors-in-asp-net-core/);
