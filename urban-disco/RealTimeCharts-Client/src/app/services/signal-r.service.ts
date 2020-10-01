@@ -7,6 +7,7 @@ import { ChartModel } from '../_interfaces/chart-model';
 })
 export class SignalRService {
   public data: ChartModel[];
+  public broadcastedData: ChartModel[];
 
   private hubConnection: signalR.HubConnection
 
@@ -26,6 +27,17 @@ export class SignalRService {
       this.data = this.data;
       console.log(data);
     });
+  }
+
+  public broadcastChartData = () => {
+    this.hubConnection.invoke('broadcastchartdata', this.data)
+    .catch(err => console.error(err));
+  }
+
+  public addBroadcastChartDataListener = () => {
+    this.hubConnection.on('broadcastchartdata', (data) => {
+      this.broadcastedData = data;
+    })
   }
 
   constructor() { }
