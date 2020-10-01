@@ -17,7 +17,8 @@ Grab the article at [https://code-maze.com/netcore-signalr-angular/](https://cod
 
 ## Notes
 
-* The lack of use of 'AllowAnyOrigin' (in favour of 'WithOrigins') on the Server app when enabling CORS (Cross-origin resource sharing) is because in .NET Core 3.0 the combination of AllowAnyOrigin and AllowCredentials is considered an insecure CORS configuration; a detailed guide has been provided at [https://code-maze.com/enabling-cors-in-asp-net-core/](https://code-maze.com/enabling-cors-in-asp-net-core/)
+* The lack of use of 'AllowAnyOrigin' (in favour of 'WithOrigins') on the Server app when enabling CORS (Cross-origin resource sharing) is because in .NET Core 3.0 the combination of AllowAnyOrigin and AllowCredentials is considered an insecure CORS configuration; a detailed guide has been provided at [https://code-maze.com/enabling-cors-in-asp-net-core/](https://code-maze.com/enabling-cors-in-asp-net-core/);
+* "In Angular 8+ the data array will receive additional _meta property which will cause the circular reference problem. To solve that you have to map the data property." I've changed the 'broadcastChartData' function to cater for this;
 
 ## What's it all about?
 

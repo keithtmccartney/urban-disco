@@ -89,9 +89,7 @@
                         "styles": [
                             "src/styles.css"
                         ],
-                        "scripts": [
-                            "./node_modules/chart.js/dist/Chart.js"
-                        ]
+                        "scripts": []
                     }
                 },
                 "lint": {

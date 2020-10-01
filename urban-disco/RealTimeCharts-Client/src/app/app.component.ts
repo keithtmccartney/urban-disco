@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.signalRService.startConnection();
     this.signalRService.addTransferChartDataListener();
+    this.signalRService.addBroadcastChartDataListener();
     this.startHttpRequest();
   }
 
@@ -37,5 +38,10 @@ export class AppComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
       })
+  }
+
+  private chartClicked = (event) => {
+    console.log(event);
+    this.signalRService.broadcastChartData();
   }
 }

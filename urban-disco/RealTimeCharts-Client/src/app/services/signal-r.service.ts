@@ -24,12 +24,21 @@ export class SignalRService {
 
   public addTransferChartDataListener = () => {
     this.hubConnection.on('transferchartdata', (data) => {
-      this.data = this.data;
+      this.data = data;
       console.log(data);
     });
   }
 
   public broadcastChartData = () => {
+    const data = this.data.map(m => {
+      const temp = {
+        data: m.data,
+        label: m.label
+      }
+
+      return temp;
+    });
+
     this.hubConnection.invoke('broadcastchartdata', this.data)
     .catch(err => console.error(err));
   }
