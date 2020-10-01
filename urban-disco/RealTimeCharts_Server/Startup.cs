@@ -54,7 +54,7 @@ namespace RealTimeCharts_Server
                 //});
 
                 endpoints.MapControllers();
-                endpoints.MapHub<ChartHub>("/charts");
+                endpoints.MapHub<ChartHub>("/chart");
             });
         }
     }
